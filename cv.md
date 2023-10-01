@@ -4,7 +4,9 @@ title: CV
 permalink: /cv/
 ---
 
-education
+(Last Updated October 1, 2023)
+
+## education
 2018—2024 	UNIVERSITY OF WASHINGTON 	SEATTLE, WA
 	PhD Candidate, Environmental and Forest Sciences. [insert teaching exp.]. 
 
