@@ -80,7 +80,5 @@ Teaching Assistant, ESRM 150: Introduction to Wildlife in the Modern World, Fall
 skills	Python, R, Google Earth Engine, MATLAB, remote sensing, machine learning, statistics (e.g., frequentist approaches), wildlife models (e.g., activity and movement models)
 	
 community	500 Women Scientists, Seattle Chapter Strike Team member, September 2019 – present.  •
-
-		
-	Senator, Graduate and Professional Student Senator, September 2019 – 2021
+Senator, Graduate and Professional Student Senator, September 2019 – 2021
 

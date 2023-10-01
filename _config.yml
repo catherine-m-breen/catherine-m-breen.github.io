@@ -49,6 +49,7 @@ minima:
 header_pages:
   - research.md
   - cv.md
+  - education.md
 
 # Set to `true` to show excerpts on the homepage.
 #
