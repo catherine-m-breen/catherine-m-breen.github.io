@@ -6,6 +6,7 @@ permalink: /research/
 
 ### Current Projects 
 - Evaluating camera traps as ground-based remote sensing networks linking snow and wildlife
+Press Release for latest paper!: 
 
 ### Publications and Datasets
 1. Breen, C., C. Vuyovich, J. Odden, D. Hall, and L. Prugh. 2023. Evaluating MODIS snow products using an extensive wildlife camera network. Remote Sensing of Environment 295:113648.
