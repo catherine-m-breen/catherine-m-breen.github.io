@@ -11,7 +11,7 @@ Optical satellite instruments provide large-scale observations of snow cover, bu
     Paper
     Tutorial for analysis, part of UW's Geohackweek. 
 
-## Snow Depth from Snow Poles 
+## Snow depth from snow poles 
 Snow pole time-lapse photography, in which a snow pole of a known height is installed in front of a camera and photographed repeatedly over the course of a snow season, allows a large network of sites to be established relatively quickly and affordably. However, current approaches for extracting snow depth information from these snow poles typically relies on time intensive manual photo processing. My work focuses on automating the process to faciliate expansion of timelapse photography for snow depth analysis. 
     published labeled data
     tutorial for analysis, part of 
