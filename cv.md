@@ -53,13 +53,14 @@ Jan 2020	NASA AND NSF-FUNDED SNOW SCHOOL	BRETTON WOODS, NH
 •	Selective 1-week full-time snow methodology course on snow pits, magnaprobe, remote sensing techniques
 •	Final project: Comparing results from ground and drone methods for snow depth
 
-## publications	
+## peer-reviewed publications	
 1.	Cunningham, C.X., Nuñez, T.A., Hentati, Y., Sullender, B., Breen, CM., Ganz, T.R., Kreling, S.E.S., Shively, K.A., Reese, E., Miles, J., Prugh, L.R., (2022). Permanent daylight saving time would reduce deer-vehicle collisions. Current Biology 32, 4982-4988.e4. https://doi.org/10.1016/j.cub.2022.10.007
-2.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
-3.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Snow Depth from Snow Poles in Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
-4.	C.M. Breen, C.A. Lumbrazzo. "Time-lapse Cameras and Snow Applications.” NASA’s SnowEx Hackweek. Tutorial. (July 2021). https://snowex-hackweek.github.io/website/tutorials/camera-traps-tutorial/timelapse-camera-tutorial.html
-5.	Chalfoun J, Majurski M, Peskin A, Breen CM, Bajcsy P, Brady M. “Empirical gradient threshold technique for automated segmentation across image modalities and cell lines,” J. Microsc. 2015 Oct; 260(1):86-99. doi:10.1111/jmi. 12269.
-6.	Booth L, Breen CM, Gullickson C, “Variations in Elephant (Loxodanta africana) Diet Along a Rainfall Gradient: The Effect of Latitude, Grass Reserves, and Proximity to Water.” Consilience: The Journal of Sustainable Development. Vol. 13, Iss. 1 (2014), Pp. 327-335.
+2.	Chalfoun J, Majurski M, Peskin A, Breen CM, Bajcsy P, Brady M. “Empirical gradient threshold technique for automated segmentation across image modalities and cell lines,” J. Microsc. 2015 Oct; 260(1):86-99. doi:10.1111/jmi. 12269.
+3.	Booth L, Breen CM, Gullickson C, “Variations in Elephant (Loxodanta africana) Diet Along a Rainfall Gradient: The Effect of Latitude, Grass Reserves, and Proximity to Water.” Consilience: The Journal of Sustainable Development. Vol. 13, Iss. 1 (2014), Pp. 327-335.
+
+## datasets
+1.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
+2.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Snow Depth from Snow Poles in Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
 
 ## selected presentations	
 1.	C.M. Breen, J Odden, C.M. Vuyovich, L. Prugh. Evaluating Camera Traps as Ground Based Remote Sensing Networks. 2021 School of Environmental and Forest Sciences Graduate Student Seminar. March 2021.  Awarded Best PhD Student Presentation.
@@ -80,8 +81,10 @@ CUAHSI Travel Scholarship – $500
 Guest lecturer, CSE 599 Computing for Conservation, November 2022
 Teaching Assistant, ESRM 150: Introduction to Wildlife in the Modern World, Fall Quarter 2019
 
-skills	Python, R, Google Earth Engine, MATLAB, remote sensing, machine learning, statistics (e.g., frequentist approaches), wildlife models (e.g., activity and movement models)
+## skills	
+Python, R, Google Earth Engine, MATLAB, remote sensing, machine learning, statistics (e.g., frequentist approaches), wildlife models (e.g., activity and movement models)
 	
-community	500 Women Scientists, Seattle Chapter Strike Team member, September 2019 – present.  •
+### community	
+500 Women Scientists, Seattle Chapter Strike Team member, September 2019 – present.  •
 Senator, Graduate and Professional Student Senator, September 2019 – 2021
 

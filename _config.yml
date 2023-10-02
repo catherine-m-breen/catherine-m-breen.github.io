@@ -45,7 +45,9 @@ minima:
 header_pages:
   - research.md
   - education.md
+  - outreach.md
   - cv.md
+
 
 # Set to `true` to show excerpts on the homepage.
 #
