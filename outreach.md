@@ -4,6 +4,9 @@ title: Outreach
 permalink: /outreach/
 ---
 
+
+
+
 ## Coding Tutorials 
 
 C.M. Breen, C.A. Lumbrazzo. "Time-lapse Cameras and Snow Applications.” NASA’s SnowEx Hackweek. Tutorial. (July 2021).
