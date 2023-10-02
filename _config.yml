@@ -28,9 +28,9 @@ minima:
   #
   social_links:
       - { platform: github,         user_url: "https://github.com/catherine-m-breen" }
-      - { platform: google_scholar, user_url: "https://scholar.google.com/" }
+      - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=lh6V20sAAAAJ&hl=en" }
       - { platform: linkedin,       user_url: "https://www.linkedin.com/in/katie-m-breen/" }
-      - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
+      - { platform: twitter,        user_url: "https://twitter.com/CatherineMBreen" }
 
 # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
 # order as they should show up.
