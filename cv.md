@@ -10,10 +10,10 @@ permalink: /cv/
 
 ## education
 2018—2024 	UNIVERSITY OF WASHINGTON 	SEATTLE, WA
-	PhD Candidate, Environmental and Forest Sciences. [insert teaching exp.]. 
+	PhD Candidate, Environmental and Forest Sciences. 
 
 2011—2015	PRINCETON UNIVERSITY	PRINCETON, NJ
-	Bachelor of Science degree with High Distinction in Computer Science, and Bachelor of Arts degree in Mathematics.   Selected as Alice M. Baldwin Scholar for demonstrating readiness to lead others. Women in Mathematics Mentor; Computer Science Tutor; and Teaching Assistant for three sections of the Probability course. GPA: 3.61.
+
 
 ## experience
 2019—Present   UNIVERSITY OF WASHINGTON	SEATTLE, WA
@@ -86,7 +86,7 @@ Teaching Assistant, ESRM 150: Introduction to Wildlife in the Modern World, Fall
 ## skills	
 Python, R, Google Earth Engine, MATLAB, remote sensing, machine learning, statistics (e.g., frequentist approaches), wildlife models (e.g., activity and movement models)
 	
-### community	
+## community	
 500 Women Scientists, Seattle Chapter Strike Team member, September 2019 – present.  •
 Senator, Graduate and Professional Student Senator, September 2019 – 2021
 
