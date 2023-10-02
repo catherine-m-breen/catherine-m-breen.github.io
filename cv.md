@@ -13,7 +13,7 @@ permalink: /cv/
 2011—2015	PRINCETON UNIVERSITY	PRINCETON, NJ
 	Bachelor of Science degree with High Distinction in Computer Science, and Bachelor of Arts degree in Mathematics.   Selected as Alice M. Baldwin Scholar for demonstrating readiness to lead others. Women in Mathematics Mentor; Computer Science Tutor; and Teaching Assistant for three sections of the Probability course. GPA: 3.61.
 
-experience
+## experience
 2019—Present   UNIVERSITY OF WASHINGTON	SEATTLE, WA
 	NASA¬¬ Graduate Fellow
 •	Thesis: “Evaluating camera traps as ground-based remote sensing networks linking snow and wildlife” 
@@ -41,7 +41,7 @@ Summer 2014	EXTREME EVENTS AND ECOLOGICAL ACCLIMATION PROJECT	SOUTHWEST, U.S.
 •	Assessed tree physiological variation and recovery in response to atmospheric drought and soil moisture deficit in rugged, difficult-to-reach areas of the Rocky Mountains in Colorado, New Mexico, Utah, and Arizona.
 •	Undergraduate thesis: “”
 
-specialized workshops
+## specialized workshops
 Aug 2022      CALIFORNIA INSTITUTE OF TECHNOLOGY	PASADENA, CA
 	Computer Vision for Ecology Summer Workshop
 •	Selective 3-week intensive workshop training scientists to use computer vision methods for ecological applications
@@ -53,7 +53,7 @@ Jan 2020	NASA AND NSF-FUNDED SNOW SCHOOL	BRETTON WOODS, NH
 •	Selective 1-week full-time snow methodology course on snow pits, magnaprobe, remote sensing techniques
 •	Final project: Comparing results from ground and drone methods for snow depth
 
-publications	
+## publications	
 1.	Cunningham, C.X., Nuñez, T.A., Hentati, Y., Sullender, B., Breen, CM., Ganz, T.R., Kreling, S.E.S., Shively, K.A., Reese, E., Miles, J., Prugh, L.R., (2022). Permanent daylight saving time would reduce deer-vehicle collisions. Current Biology 32, 4982-4988.e4. https://doi.org/10.1016/j.cub.2022.10.007
 2.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
 3.	Breen CM, Lumbrazo C., Vuyovich C., Raleigh MS, Marshall HP (2022). SnowEx 2020 Snow Depth from Snow Poles in Time-lapse Images, Version 1. Boulder, CO USA. NASA National Snow and Ice Data Center. https://doi.org/10.5067/14EU7OLF051V.
@@ -61,14 +61,14 @@ publications
 5.	Chalfoun J, Majurski M, Peskin A, Breen CM, Bajcsy P, Brady M. “Empirical gradient threshold technique for automated segmentation across image modalities and cell lines,” J. Microsc. 2015 Oct; 260(1):86-99. doi:10.1111/jmi. 12269.
 6.	Booth L, Breen CM, Gullickson C, “Variations in Elephant (Loxodanta africana) Diet Along a Rainfall Gradient: The Effect of Latitude, Grass Reserves, and Proximity to Water.” Consilience: The Journal of Sustainable Development. Vol. 13, Iss. 1 (2014), Pp. 327-335.
 
-selected presentations	
+## selected presentations	
 1.	C.M. Breen, J Odden, C.M. Vuyovich, L. Prugh. Evaluating Camera Traps as Ground Based Remote Sensing Networks. 2021 School of Environmental and Forest Sciences Graduate Student Seminar. March 2021.  Awarded Best PhD Student Presentation.
 2.	“Building a Bilingual Google Earth Engine Dashboard to Increase Accessibility to Long-term Time Series Remote Sensing Data for Monitoring Saline System Changes in Chile's Atacama Desert” eLightning presentation at American Geophysical Conference (December 2020), Speaker. 
 3.	“SnowEx Snow Depth Automation from Timelapse Cameras” (September 2020), Poster Presenter at 2020 SnowEx Conference. 
 4.	“Utilizing NASA Earth Observations and Community Science to Detect and Map the Displacement of Cladophora along the Milwaukee County Shoreline” presentation at American Geophysical Conference (December 2018), Speaker.
 5.	2019 Winter Climate on Tap event sponsored by Program on Climate Change, Speaker.
 
-graduate research funding	
+## graduate research funding	
 American Scandinavian Fellowship –$23,000  
 Microsoft AI for Earth Grant –$30,000 in Azure credits between 2021-2023
 Kappa Alpha Theta Foundation Merit Scholarship – $5,000
@@ -76,7 +76,8 @@ AGU Flash Freeze Competition Prize for Field Equipment –$1,000
 Director’s Fund Travel Scholarship –$300
 CUAHSI Travel Scholarship – $500  
 
-teaching	Guest lecturer, CSE 599 Computing for Conservation, November 2022
+## teaching	
+Guest lecturer, CSE 599 Computing for Conservation, November 2022
 Teaching Assistant, ESRM 150: Introduction to Wildlife in the Modern World, Fall Quarter 2019
 
 skills	Python, R, Google Earth Engine, MATLAB, remote sensing, machine learning, statistics (e.g., frequentist approaches), wildlife models (e.g., activity and movement models)
