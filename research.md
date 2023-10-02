@@ -8,6 +8,8 @@ permalink: /research/
 - Evaluating camera traps as ground-based remote sensing networks linking snow and wildlife
 Press Release for latest paper!: 
 
+
+
 ### Publications and Datasets
 1. Breen, C., C. Vuyovich, J. Odden, D. Hall, and L. Prugh. 2023. Evaluating MODIS snow products using an extensive wildlife camera network. Remote Sensing of Environment 295:113648.
 2.	Cunningham, C.X., Nuñez, T.A., Hentati, Y., Sullender, B., Breen, CM., Ganz, T.R., Kreling, S.E.S., Shively, K.A., Reese, E., Miles, J., Prugh, L.R., (2022). Permanent daylight saving time would reduce deer-vehicle collisions. Current Biology 32, 4982-4988.e4. https://doi.org/10.1016/j.cub.2022.10.007
