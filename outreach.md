@@ -4,7 +4,7 @@ title: Outreach
 permalink: /outreach/
 ---
 
-<img src="\imgs\northernlights.jpg" alt="snow lights" style="width: 200px; height: 90px;">>
+<!-- <img src="\imgs\northernlights.jpg" alt="snow lights" style="width: 200px; height: 90px;"> -->
 
 ### Coding Tutorials 
 

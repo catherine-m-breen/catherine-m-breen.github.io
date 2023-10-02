@@ -5,7 +5,7 @@ permalink: /publications/
 ---
 
 
-<img src="\imgs\snowprints.jpg" alt="snow prints" style="width: 200px; height: 90px;">>
+<!-- // <img src="\imgs\snowprints.jpg" alt="snow prints" style="width: 200px; height: 90px;"> -->
 
 ### Publications and Datasets
 
@@ -23,7 +23,7 @@ Chalfoun J, Majurski M, Peskin A, Breen CM, Bajcsy P, Brady M. “Empirical grad
 
 Booth L, Breen CM, Gullickson C, “Variations in Elephant (Loxodanta africana) Diet Along a Rainfall Gradient: The Effect of Latitude, Grass Reserves, and Proximity to Water.” Consilience: The Journal of Sustainable Development. Vol. 13, Iss. 1 (2014), Pp. 327-335.
 
-### Selected conference Presentations 
+### selected conference presentations 
 
 C.M. Breen, J Odden, C.M. Vuyovich, L. Prugh. Evaluating Camera Traps as Ground Based Remote Sensing Networks. 2021 School of Environmental and Forest Sciences Graduate Student Seminar. March 2021.  Awarded Best PhD Student Presentation.
 
