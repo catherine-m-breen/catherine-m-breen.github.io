@@ -1,8 +1,11 @@
 ---
 layout: page
 title: Publications
-permalink: /publication/
+permalink: /publications/
 ---
+
+
+<img src="\imgs\snowprints.jpg" alt="snow prints" style="width: 200px; height: 90px;">>
 
 ### Publications and Datasets
 
