@@ -1,0 +1,134 @@
+{
+  "1": {
+    "owner": "NASA SnowEX",
+    "contact": "Mark Raleigh",
+    "location": [38.0, -108.0],
+    "year(s)": "2016-2017",
+    "sites": 34,
+    "images": 100000,
+    "data availability": "https://nsidc.org/data/snex17_tli/versions/1",
+    "labeled":"no"
+  },
+  "2": {
+    "owner": "NASA SnowEX",
+    "contact":"Carrie Vuyovich",
+    "location": [39.03, -108.0],
+    "year(s)": "2020-2021",
+    "sites": 29,
+    "images": 100000,
+    "data availability": "https://nsidc.org/data/snex20_tli/versions/1",
+    "labeled":"yes"
+  },
+  "3": {
+    "owner": "NASA SnowEX",
+    "contact":"Carrie Vuyovich",
+    "location": [64, -147],
+    "year(s)": "2022-2023",
+    "sites": 10,
+    "images": 100000,
+    "data availability": "upon request",
+    "labeled":"no"
+  },
+  "4": {
+    "owner": "University of Washington",
+    "contact": "Ben Sullender",
+    "location": [48, -120],
+    "year(s)": "2021-2022",
+    "sites": 13,
+    "images": 100000,
+    "data availability": "upon request",
+    "labeled":"yes"
+  },
+  "5": {
+    "owner": "University of Washington Olympex",
+    "contact": "Joe Boomgard-Zagrodnik  and Ryan Currier",
+    "location": [47, -123.0],
+    "year(s)": "2020-2021",
+    "sites": 3,
+    "images": 100000,
+    "data availability": "https://olympex.atmos.washington.edu/index.html?x=OLYMPEX_Obs",
+    "labeled":"unknown"
+  },
+  "6": {
+    "owner": "University of Washington",
+    "contact": "Katie Breen",
+    "location": [48, -117],
+    "year(s)": "2021-2022",
+    "sites": 9,
+    "images": 100000,
+    "data availability": "http://hdl.handle.net/1773/49480",
+    "labeled":"yes"
+  },
+  "7": {
+    "owner": "The Nature Conservancy",
+    "contact": "Emily Howe, Susan Dickerson-Lange",
+    "location": [47, -121],
+    "year(s)": "2011-2012, 2012-2013",
+    "sites": 8,
+    "images": "NA",
+    "data availability": "upon request",
+    "labeled":"yes"
+  },
+  "8": {
+    "owner": "University of Idaho",
+    "contact": "Kaitlyn Strickfaden",
+    "location": [46, -116],
+    "year(s)": "2022-2023",
+    "sites": 290,
+    "images": 240000,
+    "data availability": "upon request",
+    "labeled": "yes"
+  },
+  "9": {
+    "owner": "University of New Hampshire",
+    "contact": "Holly Proulx, Jennifer Jacobs",
+    "location": [43, -71],
+    "year(s)": "2020-2021",
+    "sites": "unknown",
+    "images": "unknown",
+    "data availability": "upon request",
+    "labeled":"yes"
+  },
+  "10": {
+    "owner": "NASA ABoVE",
+    "contact": "Chris Cosgrove",
+    "location": [60, -142],
+    "year(s)": "2016-2017",
+    "sites": 2,
+    "images": "unknown",
+    "data availability": "https://doi.org/10.3334/ORNLDAAC/1656",
+     "labeled": "yes"
+  },
+    "11": {
+    "owner": "1854 Treaty Authority",
+    "contact": "Morgan Swingen",
+    "location": [47, -92],
+    "year(s)": "2022-2023, 2023-2024, 2024-2025",
+    "sites": "unknown",
+    "images": "unknown",
+    "data availability": "upon request",
+    "labeled":"partial"
+  },
+   "12": {
+    "owner": "1854 Treaty Authority",
+    "contact": "Morgan Swingen",
+    "location": [47, -92],
+    "year(s)": "2022-2023, 2023-2024, 2024-2025",
+    "sites": "unknown",
+    "images": "unknown",
+    "data availability": "upon request",
+    "labeled":"partial"
+  },
+    "13": {
+    "owner": "Universidad de Alcalá",
+    "contact": "Miguel Ángel de Pablo",
+    "location": [-62, 60],
+    "year(s)": "2017-2022",
+    "sites": "2",
+    "images": "unknown",
+    "data availability": "https://zenodo.org/communities/permathermal/records?q=&l=list&p=1&s=10&sort=newest",
+    "labeled":"yes",
+    "notes": "https://www.sciencedirect.com/science/article/pii/S2352340923010016"
+  }
+}
+
