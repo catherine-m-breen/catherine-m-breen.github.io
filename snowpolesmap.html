@@ -14594,28 +14594,176 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Time-Lapse-Camera-Maps">Time-Lapse Camera Maps<a class="anchor-link" href="#Time-Lapse-Camera-Maps">&#182;</a></h1><p>Currently there are 13 different networks with over 500,000 timelapse camera images. Please reach out if you'd like to include your camera network on this map.</p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span> <span class="c1"># package to read the json </span>
+<span class="kn">import</span> <span class="nn">folium</span> <span class="c1"># package for interactive map</span>
+<span class="kn">import</span> <span class="nn">branca</span> <span class="c1"># package for html formatting in folium </span>
+<span class="kn">from</span> <span class="nn">branca.element</span> <span class="kn">import</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">MacroElement</span><span class="p">,</span> <span class="n">Template</span> <span class="c1"># package for additional html viz</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="s1">&#39;/Users/catherinebreen/code/catherine-m-breen.github.io/snowpoles_dict.json&#39;</span>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">snowpole_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">96</span><span class="p">),</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="n">welcome_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;div style=&quot;</span>
+<span class="s2">    position: fixed;</span>
+<span class="s2">    bottom: 50px;</span>
+<span class="s2">    left: 50px;</span>
+<span class="s2">    width: 300px;</span>
+<span class="s2">    z-index: 9999;</span>
+<span class="s2">    background-color: white;</span>
+<span class="s2">    padding: 10px;</span>
+<span class="s2">    border: 2px solid grey;</span>
+<span class="s2">    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);</span>
+<span class="s2">&quot;&gt;</span>
+<span class="s2">    &lt;h4&gt;Welcome to the Snowpole Network Map&lt;/h4&gt;</span>
+<span class="s2">    &lt;p&gt;This map shows various snowpole observation sites from NASA and university partners.&lt;/p&gt;</span>
+<span class="s2">    &lt;p&gt;Click on any marker to learn more about the site.&lt;/p&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">m</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">welcome_html</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">snowpole_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    &lt;h1&gt;</span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/h1&gt;&lt;br&gt;</span>
+<span class="s2">    &lt;p&gt;&lt;strong&gt;Contact:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">    &lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">    &lt;p&gt;&lt;strong&gt;Sites:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sites&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">    &lt;p&gt;&lt;strong&gt;Data availability:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data availability&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">    </span><span class="si">{</span>
+    <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;ex_img_path&#39;</span><span class="p">]</span> <span class="o">+</span> 
+    <span class="s2">&quot;&#39; style=&#39;position: absolute; bottom: 10px; right: 10px; width: 100px; height: auto; border: 1px solid #ccc;&#39;&gt;&quot;</span>
+    <span class="k">if</span> <span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ex_img_path&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">]</span>
+    <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+<span class="si">}</span><span class="s2"></span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">iframe</span> <span class="o">=</span> <span class="n">branca</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="n">html</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">popup</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">iframe</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="c1"># folium.Marker(</span>
+    <span class="c1">#     location=snowpole_data[key][&#39;location&#39;],</span>
+    <span class="c1">#     tooltip=&quot;Click me!&quot;,</span>
+    <span class="c1">#    # popup=f&quot;owner: {snowpole_data[key][&#39;owner&#39;]}&quot;,</span>
+    <span class="c1">#     popup = popup,</span>
+    <span class="c1">#     icon=folium.Icon(icon=&quot;camera&quot;), </span>
+    <span class="c1"># ).add_to(m)</span>
+
+    <span class="n">marker</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">],</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Click me!&quot;</span><span class="p">,</span>
+        <span class="n">popup</span><span class="o">=</span><span class="n">popup</span><span class="p">,</span>
+        <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s2">&quot;camera&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Add JS that zooms and pans to marker</span>
+    <span class="n">zoom_js</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    function(e)</span><span class="se">{{</span><span class="s2"></span>
+<span class="s2">        var latlng = e.target.getLatLng();</span>
+<span class="s2">        e.target._map.setView(latlng, 10);  // 5 = zoom level</span>
+<span class="s2">    </span><span class="se">}}</span><span class="s2"></span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">marker</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;&lt;script&gt;var m = this; m.on(&#39;click&#39;, </span><span class="si">{</span><span class="n">zoom_js</span><span class="si">}</span><span class="s2">);&lt;/script&gt;&quot;</span>
+    <span class="p">))</span>
+
+    <span class="n">marker</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## could add NEON sites; there are probs sites in CA too? </span>
+<span class="c1">## Bongio study: https://zenodo.org/records/3724877 </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 
+
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+
+
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
@@ -14645,7 +14793,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_b97fa013674a1892142d08ad6249a2c7 {
+                #map_7812ae98bbff29b0137f73e2051b80a9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -14675,14 +14823,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     &lt;p&gt;Click on any marker to learn more about the site.&lt;/p&gt;
 &lt;/div&gt;
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_b97fa013674a1892142d08ad6249a2c7&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_7812ae98bbff29b0137f73e2051b80a9&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_b97fa013674a1892142d08ad6249a2c7 = L.map(
-                &quot;map_b97fa013674a1892142d08ad6249a2c7&quot;,
+            var map_7812ae98bbff29b0137f73e2051b80a9 = L.map(
+                &quot;map_7812ae98bbff29b0137f73e2051b80a9&quot;,
                 {
                     center: [45.0, -96.0],
                     crs: L.CRS.EPSG3857,
@@ -14696,43 +14844,43 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
         
     
-            var tile_layer_ff09f7e00d6d86fe46bbcb17dfbe0bfd = L.tileLayer(
+            var tile_layer_c3c0512a75f8b04a786dd3eb65ea5144 = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {&quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 19, &quot;maxZoom&quot;: 19, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
             );
         
     
-            tile_layer_ff09f7e00d6d86fe46bbcb17dfbe0bfd.addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            tile_layer_c3c0512a75f8b04a786dd3eb65ea5144.addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var marker_b7c08161bfd98728484f461aec222f75 = L.marker(
+            var marker_38ff19a3005a2247e73dc3fc104fb7bf = L.marker(
                 [38.0, -108.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_84fae3a55eaa9d71f17f01f4ad5f7ce3 = L.AwesomeMarkers.icon(
+            var icon_9cc3d2baaa0306ccf03d22a8c01aa585 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_b7c08161bfd98728484f461aec222f75.setIcon(icon_84fae3a55eaa9d71f17f01f4ad5f7ce3);
+            marker_38ff19a3005a2247e73dc3fc104fb7bf.setIcon(icon_9cc3d2baaa0306ccf03d22a8c01aa585);
         
     
-        var popup_3bb540747bb528b51dfffcad6395d683 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_7ae3d11167c450bdb2170754f0eae5e6 = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_ace0bd5a216f992f154ba95475ea145a = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBNYXJrIFJhbGVpZ2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMTYtMjAxNzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDM0PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9uc2lkYy5vcmcvZGF0YS9zbmV4MTdfdGxpL3ZlcnNpb25zLzE8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_3bb540747bb528b51dfffcad6395d683.setContent(i_frame_ace0bd5a216f992f154ba95475ea145a);
+                var i_frame_a84056e03f88b19a792d06dec0958e31 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBNYXJrIFJhbGVpZ2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMTYtMjAxNzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDM0PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9uc2lkYy5vcmcvZGF0YS9zbmV4MTdfdGxpL3ZlcnNpb25zLzE8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_7ae3d11167c450bdb2170754f0eae5e6.setContent(i_frame_a84056e03f88b19a792d06dec0958e31);
             
         
 
-        marker_b7c08161bfd98728484f461aec222f75.bindPopup(popup_3bb540747bb528b51dfffcad6395d683)
+        marker_38ff19a3005a2247e73dc3fc104fb7bf.bindPopup(popup_7ae3d11167c450bdb2170754f0eae5e6)
         ;
 
         
     
     
-            marker_b7c08161bfd98728484f461aec222f75.bindTooltip(
+            marker_38ff19a3005a2247e73dc3fc104fb7bf.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14740,34 +14888,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_611514aff98adcd002588c8f17172f1c = L.marker(
+            var marker_1428058208c4ba74557ee9e112081fea = L.marker(
                 [39.03, -108.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_5567b187020ce60d78101cc85a923d6c = L.AwesomeMarkers.icon(
+            var icon_032aa64f4b92d306312d3b171512de73 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_611514aff98adcd002588c8f17172f1c.setIcon(icon_5567b187020ce60d78101cc85a923d6c);
+            marker_1428058208c4ba74557ee9e112081fea.setIcon(icon_032aa64f4b92d306312d3b171512de73);
         
     
-        var popup_9b63969ae84328401a7828b437e5acb7 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_b60f408ce3611f319ac8f9e242e1e2d6 = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_1f926308fe06f0b67366985f272eb538 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBDYXJyaWUgVnV5b3ZpY2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjAtMjAyMTwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI5PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9uc2lkYy5vcmcvZGF0YS9zbmV4MjBfdGxpL3ZlcnNpb25zLzE8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_9b63969ae84328401a7828b437e5acb7.setContent(i_frame_1f926308fe06f0b67366985f272eb538);
+                var i_frame_ee647660205f0e34037ae2cff7da1b92 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBDYXJyaWUgVnV5b3ZpY2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjAtMjAyMTwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI5PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9uc2lkYy5vcmcvZGF0YS9zbmV4MjBfdGxpL3ZlcnNpb25zLzE8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_b60f408ce3611f319ac8f9e242e1e2d6.setContent(i_frame_ee647660205f0e34037ae2cff7da1b92);
             
         
 
-        marker_611514aff98adcd002588c8f17172f1c.bindPopup(popup_9b63969ae84328401a7828b437e5acb7)
+        marker_1428058208c4ba74557ee9e112081fea.bindPopup(popup_b60f408ce3611f319ac8f9e242e1e2d6)
         ;
 
         
     
     
-            marker_611514aff98adcd002588c8f17172f1c.bindTooltip(
+            marker_1428058208c4ba74557ee9e112081fea.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14775,34 +14923,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_41f4c3779a9af711f5e5e78c963cbf5d = L.marker(
+            var marker_1018f97cfd1e6249fce20e54195c8c79 = L.marker(
                 [64.0, -147.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_f08181ffe93c818ec817029b2ce66ba9 = L.AwesomeMarkers.icon(
+            var icon_90ec03b5b6847a1276d7da3b20eb7b50 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_41f4c3779a9af711f5e5e78c963cbf5d.setIcon(icon_f08181ffe93c818ec817029b2ce66ba9);
+            marker_1018f97cfd1e6249fce20e54195c8c79.setIcon(icon_90ec03b5b6847a1276d7da3b20eb7b50);
         
     
-        var popup_65772a46b1092bf1efc750e3509ad619 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_a94c1bcffe41e976ab8776df25df97de = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_5f8c9bdd86d55db6c995a9d39ef26ffb = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBDYXJyaWUgVnV5b3ZpY2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDEwPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_65772a46b1092bf1efc750e3509ad619.setContent(i_frame_5f8c9bdd86d55db6c995a9d39ef26ffb);
+                var i_frame_0d66fc64c4b1ad0b960a08b5a490f930 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIFNub3dFWDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBDYXJyaWUgVnV5b3ZpY2g8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDEwPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_a94c1bcffe41e976ab8776df25df97de.setContent(i_frame_0d66fc64c4b1ad0b960a08b5a490f930);
             
         
 
-        marker_41f4c3779a9af711f5e5e78c963cbf5d.bindPopup(popup_65772a46b1092bf1efc750e3509ad619)
+        marker_1018f97cfd1e6249fce20e54195c8c79.bindPopup(popup_a94c1bcffe41e976ab8776df25df97de)
         ;
 
         
     
     
-            marker_41f4c3779a9af711f5e5e78c963cbf5d.bindTooltip(
+            marker_1018f97cfd1e6249fce20e54195c8c79.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14810,34 +14958,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_ecc4d6b1fe9b37b51eb8692b3d8e0191 = L.marker(
+            var marker_b1aceb41b1cbd95ac1bc2d1eb231210b = L.marker(
                 [48.0, -120.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_d60bd2808114b23e1385db124ee7a25b = L.AwesomeMarkers.icon(
+            var icon_455064c23cf1d19afaf09ae6b173c6a5 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_ecc4d6b1fe9b37b51eb8692b3d8e0191.setIcon(icon_d60bd2808114b23e1385db124ee7a25b);
+            marker_b1aceb41b1cbd95ac1bc2d1eb231210b.setIcon(icon_455064c23cf1d19afaf09ae6b173c6a5);
         
     
-        var popup_4c4bd79c3d3dfc8052ebdf516fd4271f = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_564a3843931837fe5a2adaa7144ca38a = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_7ec68e0014c2861a71ebc8080abea19d = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b248L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gQmVuIFN1bGxlbmRlcjwvcD4KICAgIDxwPjxzdHJvbmc+WWVhcjo8L3N0cm9uZz4gMjAyMS0yMDIyPC9wPgogICAgPHA+PHN0cm9uZz5TaXRlczo8L3N0cm9uZz4gMTM8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiB1cG9uIHJlcXVlc3Q8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_4c4bd79c3d3dfc8052ebdf516fd4271f.setContent(i_frame_7ec68e0014c2861a71ebc8080abea19d);
+                var i_frame_29c56efefb4b53fbefd57efba904adcb = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b248L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gQmVuIFN1bGxlbmRlcjwvcD4KICAgIDxwPjxzdHJvbmc+WWVhcjo8L3N0cm9uZz4gMjAyMS0yMDIyPC9wPgogICAgPHA+PHN0cm9uZz5TaXRlczo8L3N0cm9uZz4gMTM8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiB1cG9uIHJlcXVlc3Q8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_564a3843931837fe5a2adaa7144ca38a.setContent(i_frame_29c56efefb4b53fbefd57efba904adcb);
             
         
 
-        marker_ecc4d6b1fe9b37b51eb8692b3d8e0191.bindPopup(popup_4c4bd79c3d3dfc8052ebdf516fd4271f)
+        marker_b1aceb41b1cbd95ac1bc2d1eb231210b.bindPopup(popup_564a3843931837fe5a2adaa7144ca38a)
         ;
 
         
     
     
-            marker_ecc4d6b1fe9b37b51eb8692b3d8e0191.bindTooltip(
+            marker_b1aceb41b1cbd95ac1bc2d1eb231210b.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14845,34 +14993,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_ad06f1f2a349b7ee57fd0328bbcfe8c1 = L.marker(
+            var marker_eef527a3bdfd1b185d2408a80dd00ef0 = L.marker(
                 [47.0, -123.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_2c76fa8726fe4b9249189a787e2ca5cc = L.AwesomeMarkers.icon(
+            var icon_aeeaecb00df10e3ae383ed09a829a8b5 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_ad06f1f2a349b7ee57fd0328bbcfe8c1.setIcon(icon_2c76fa8726fe4b9249189a787e2ca5cc);
+            marker_eef527a3bdfd1b185d2408a80dd00ef0.setIcon(icon_aeeaecb00df10e3ae383ed09a829a8b5);
         
     
-        var popup_ac6755279a3efa072d7ede69bbe15067 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_2e9548469f86be93c7e918b994a8134a = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_28b6a57061f91c60de5f55d04f6f6f58 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b24gT2x5bXBleDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBKb2UgQm9vbWdhcmQtWmFncm9kbmlrICBhbmQgUnlhbiBDdXJyaWVyPC9wPgogICAgPHA+PHN0cm9uZz5ZZWFyOjwvc3Ryb25nPiAyMDIwLTIwMjE8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiAzPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9vbHltcGV4LmF0bW9zLndhc2hpbmd0b24uZWR1L2luZGV4Lmh0bWw/eD1PTFlNUEVYX09iczwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_ac6755279a3efa072d7ede69bbe15067.setContent(i_frame_28b6a57061f91c60de5f55d04f6f6f58);
+                var i_frame_829e052fc93def83c2239a55bb3bc8b6 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b24gT2x5bXBleDwvaDE+PGJyPgogICAgPHA+PHN0cm9uZz5Db250YWN0Ojwvc3Ryb25nPiBKb2UgQm9vbWdhcmQtWmFncm9kbmlrICBhbmQgUnlhbiBDdXJyaWVyPC9wPgogICAgPHA+PHN0cm9uZz5ZZWFyOjwvc3Ryb25nPiAyMDIwLTIwMjE8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiAzPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9vbHltcGV4LmF0bW9zLndhc2hpbmd0b24uZWR1L2luZGV4Lmh0bWw/eD1PTFlNUEVYX09iczwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_2e9548469f86be93c7e918b994a8134a.setContent(i_frame_829e052fc93def83c2239a55bb3bc8b6);
             
         
 
-        marker_ad06f1f2a349b7ee57fd0328bbcfe8c1.bindPopup(popup_ac6755279a3efa072d7ede69bbe15067)
+        marker_eef527a3bdfd1b185d2408a80dd00ef0.bindPopup(popup_2e9548469f86be93c7e918b994a8134a)
         ;
 
         
     
     
-            marker_ad06f1f2a349b7ee57fd0328bbcfe8c1.bindTooltip(
+            marker_eef527a3bdfd1b185d2408a80dd00ef0.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14880,34 +15028,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_3dec1e5c2d957770809fc80a6baa6c7c = L.marker(
+            var marker_b8f64fe9c28574dc14bddf5f329cf55d = L.marker(
                 [48.0, -117.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_6929c1d5c4ebbe7ac5839a2b576d0e8f = L.AwesomeMarkers.icon(
+            var icon_fb37ec610a9fbfb4f5e00740f5276c31 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_3dec1e5c2d957770809fc80a6baa6c7c.setIcon(icon_6929c1d5c4ebbe7ac5839a2b576d0e8f);
+            marker_b8f64fe9c28574dc14bddf5f329cf55d.setIcon(icon_fb37ec610a9fbfb4f5e00740f5276c31);
         
     
-        var popup_5093fbdc57c34b8493cd4fb2f67330ef = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_85ff2edb7f431ccacfcaeccf6faa516e = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_2b7ca796f8b9da15febd85230f7521d7 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b248L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gS2F0aWUgQnJlZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjEtMjAyMjwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDk8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiBodHRwOi8vaGRsLmhhbmRsZS5uZXQvMTc3My80OTQ4MDwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_5093fbdc57c34b8493cd4fb2f67330ef.setContent(i_frame_2b7ca796f8b9da15febd85230f7521d7);
+                var i_frame_93cc94d1b8bb122cf5a107d7774761bb = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIFdhc2hpbmd0b248L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gS2F0aWUgQnJlZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjEtMjAyMjwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDk8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiBodHRwOi8vaGRsLmhhbmRsZS5uZXQvMTc3My80OTQ4MDwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_85ff2edb7f431ccacfcaeccf6faa516e.setContent(i_frame_93cc94d1b8bb122cf5a107d7774761bb);
             
         
 
-        marker_3dec1e5c2d957770809fc80a6baa6c7c.bindPopup(popup_5093fbdc57c34b8493cd4fb2f67330ef)
+        marker_b8f64fe9c28574dc14bddf5f329cf55d.bindPopup(popup_85ff2edb7f431ccacfcaeccf6faa516e)
         ;
 
         
     
     
-            marker_3dec1e5c2d957770809fc80a6baa6c7c.bindTooltip(
+            marker_b8f64fe9c28574dc14bddf5f329cf55d.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14915,34 +15063,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_8ba4561b3b2c3a2584864acc32e34532 = L.marker(
+            var marker_0f1e59880cec308571bca41fec3a90b7 = L.marker(
                 [47.0, -121.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_ae28bd9371a37a6a5def043140facfd8 = L.AwesomeMarkers.icon(
+            var icon_c18bc7c66cdd7f36c6af55a49c0e276b = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_8ba4561b3b2c3a2584864acc32e34532.setIcon(icon_ae28bd9371a37a6a5def043140facfd8);
+            marker_0f1e59880cec308571bca41fec3a90b7.setIcon(icon_c18bc7c66cdd7f36c6af55a49c0e276b);
         
     
-        var popup_4091d33e6e385628e5a358cadcbcd305 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_8a8636c7aa261c7e676773872a2dca8d = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_3318a59af77ee7437cf45b7418a3f6b3 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5UaGUgTmF0dXJlIENvbnNlcnZhbmN5PC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IEVtaWx5IEhvd2UsIFN1c2FuIERpY2tlcnNvbi1MYW5nZTwvcD4KICAgIDxwPjxzdHJvbmc+WWVhcjo8L3N0cm9uZz4gMjAxMS0yMDEyLCAyMDEyLTIwMTM8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiA4PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_4091d33e6e385628e5a358cadcbcd305.setContent(i_frame_3318a59af77ee7437cf45b7418a3f6b3);
+                var i_frame_30957eba4ead15888d30c1ea71422a44 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5UaGUgTmF0dXJlIENvbnNlcnZhbmN5PC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IEVtaWx5IEhvd2UsIFN1c2FuIERpY2tlcnNvbi1MYW5nZTwvcD4KICAgIDxwPjxzdHJvbmc+WWVhcjo8L3N0cm9uZz4gMjAxMS0yMDEyLCAyMDEyLTIwMTM8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiA4PC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_8a8636c7aa261c7e676773872a2dca8d.setContent(i_frame_30957eba4ead15888d30c1ea71422a44);
             
         
 
-        marker_8ba4561b3b2c3a2584864acc32e34532.bindPopup(popup_4091d33e6e385628e5a358cadcbcd305)
+        marker_0f1e59880cec308571bca41fec3a90b7.bindPopup(popup_8a8636c7aa261c7e676773872a2dca8d)
         ;
 
         
     
     
-            marker_8ba4561b3b2c3a2584864acc32e34532.bindTooltip(
+            marker_0f1e59880cec308571bca41fec3a90b7.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14950,34 +15098,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_46d5a6cbdbd7fd373f45386dbc479b68 = L.marker(
+            var marker_12725e4c2d241dda2614643c0d72cd02 = L.marker(
                 [46.0, -116.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_5cfbed362df17bd5c4d53035cf37a541 = L.AwesomeMarkers.icon(
+            var icon_2179582a5a4171fd1ddfcdad37ca5d5c = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_46d5a6cbdbd7fd373f45386dbc479b68.setIcon(icon_5cfbed362df17bd5c4d53035cf37a541);
+            marker_12725e4c2d241dda2614643c0d72cd02.setIcon(icon_2179582a5a4171fd1ddfcdad37ca5d5c);
         
     
-        var popup_a55da73f01e727c88a5c85e486a134c5 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_638e66287c7945800e1042f177dba6b9 = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_263a6a4cd3d41db474ebd8bfeca8f5a9 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIElkYWhvPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IEthaXRseW4gU3RyaWNrZmFkZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI5MDwvcD4KICAgIDxwPjxzdHJvbmc+RGF0YSBhdmFpbGFiaWxpdHk6PC9zdHJvbmc+IHVwb24gcmVxdWVzdDwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_a55da73f01e727c88a5c85e486a134c5.setContent(i_frame_263a6a4cd3d41db474ebd8bfeca8f5a9);
+                var i_frame_5e55ab1885fab49384ffabd4cfc74e9d = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIElkYWhvPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IEthaXRseW4gU3RyaWNrZmFkZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMzwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI5MDwvcD4KICAgIDxwPjxzdHJvbmc+RGF0YSBhdmFpbGFiaWxpdHk6PC9zdHJvbmc+IHVwb24gcmVxdWVzdDwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_638e66287c7945800e1042f177dba6b9.setContent(i_frame_5e55ab1885fab49384ffabd4cfc74e9d);
             
         
 
-        marker_46d5a6cbdbd7fd373f45386dbc479b68.bindPopup(popup_a55da73f01e727c88a5c85e486a134c5)
+        marker_12725e4c2d241dda2614643c0d72cd02.bindPopup(popup_638e66287c7945800e1042f177dba6b9)
         ;
 
         
     
     
-            marker_46d5a6cbdbd7fd373f45386dbc479b68.bindTooltip(
+            marker_12725e4c2d241dda2614643c0d72cd02.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -14985,34 +15133,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_8675f3f1b67cfcd76e931b427f744a1e = L.marker(
+            var marker_1a6fcfb2440b9dd961b18ace2989d8b5 = L.marker(
                 [43.0, -71.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_44536be6113ef642bb4dfb6e7b5d7234 = L.AwesomeMarkers.icon(
+            var icon_06c69ad47233955d15bc008f9348c630 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_8675f3f1b67cfcd76e931b427f744a1e.setIcon(icon_44536be6113ef642bb4dfb6e7b5d7234);
+            marker_1a6fcfb2440b9dd961b18ace2989d8b5.setIcon(icon_06c69ad47233955d15bc008f9348c630);
         
     
-        var popup_348f5aaeef1387b57f09ea815fcda5dd = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_90e98fb7692d6eda0f790d2ce8cec74a = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_afdec1d89c1eff0c079353484c0b1930 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIE5ldyBIYW1wc2hpcmU8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gSG9sbHkgUHJvdWx4LCBKZW5uaWZlciBKYWNvYnM8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjAtMjAyMTwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IHVua25vd248L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiB1cG9uIHJlcXVlc3Q8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_348f5aaeef1387b57f09ea815fcda5dd.setContent(i_frame_afdec1d89c1eff0c079353484c0b1930);
+                var i_frame_51ab5a7d874fb4c06fbfe02590302fa9 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaXR5IG9mIE5ldyBIYW1wc2hpcmU8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gSG9sbHkgUHJvdWx4LCBKZW5uaWZlciBKYWNvYnM8L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjAtMjAyMTwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IHVua25vd248L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiB1cG9uIHJlcXVlc3Q8L3A+CiAgICA=&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_90e98fb7692d6eda0f790d2ce8cec74a.setContent(i_frame_51ab5a7d874fb4c06fbfe02590302fa9);
             
         
 
-        marker_8675f3f1b67cfcd76e931b427f744a1e.bindPopup(popup_348f5aaeef1387b57f09ea815fcda5dd)
+        marker_1a6fcfb2440b9dd961b18ace2989d8b5.bindPopup(popup_90e98fb7692d6eda0f790d2ce8cec74a)
         ;
 
         
     
     
-            marker_8675f3f1b67cfcd76e931b427f744a1e.bindTooltip(
+            marker_1a6fcfb2440b9dd961b18ace2989d8b5.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -15020,34 +15168,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_8e47af6fadb2598fc221accff8e46897 = L.marker(
+            var marker_3ded1d3783eb8d089d869b0e822e44fa = L.marker(
                 [60.0, -142.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_48d95677bf7e4b98dbf4f95e731c62c5 = L.AwesomeMarkers.icon(
+            var icon_1b863f0d501c2106bde279295981de1b = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_8e47af6fadb2598fc221accff8e46897.setIcon(icon_48d95677bf7e4b98dbf4f95e731c62c5);
+            marker_3ded1d3783eb8d089d869b0e822e44fa.setIcon(icon_1b863f0d501c2106bde279295981de1b);
         
     
-        var popup_df9aab4d72f62c7a8ee876b656baf5e4 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_cac744744242a5a021af19ff74afc5a5 = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_974ea65292e7b48bf42a3054a24c7954 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIEFCb1ZFPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IENocmlzIENvc2dyb3ZlPC9wPgogICAgPHA+PHN0cm9uZz5ZZWFyOjwvc3Ryb25nPiAyMDE2LTIwMTc8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiAyPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9kb2kub3JnLzEwLjMzMzQvT1JOTERBQUMvMTY1NjwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_df9aab4d72f62c7a8ee876b656baf5e4.setContent(i_frame_974ea65292e7b48bf42a3054a24c7954);
+                var i_frame_51d184604f34e478fb1f145f8eeaf746 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5OQVNBIEFCb1ZFPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IENocmlzIENvc2dyb3ZlPC9wPgogICAgPHA+PHN0cm9uZz5ZZWFyOjwvc3Ryb25nPiAyMDE2LTIwMTc8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiAyPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gaHR0cHM6Ly9kb2kub3JnLzEwLjMzMzQvT1JOTERBQUMvMTY1NjwvcD4KICAgIA==&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_cac744744242a5a021af19ff74afc5a5.setContent(i_frame_51d184604f34e478fb1f145f8eeaf746);
             
         
 
-        marker_8e47af6fadb2598fc221accff8e46897.bindPopup(popup_df9aab4d72f62c7a8ee876b656baf5e4)
+        marker_3ded1d3783eb8d089d869b0e822e44fa.bindPopup(popup_cac744744242a5a021af19ff74afc5a5)
         ;
 
         
     
     
-            marker_8e47af6fadb2598fc221accff8e46897.bindTooltip(
+            marker_3ded1d3783eb8d089d869b0e822e44fa.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -15055,34 +15203,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_22b967a40a97cec76f53f1f57fadbe84 = L.marker(
+            var marker_bd81634d2ec721722fda8482a176eb8b = L.marker(
                 [47.0, -92.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_6a29aa85cbb1e60c3498916f76e9e149 = L.AwesomeMarkers.icon(
+            var icon_664884dfc5b94f8c966dc5ca88aa7376 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_22b967a40a97cec76f53f1f57fadbe84.setIcon(icon_6a29aa85cbb1e60c3498916f76e9e149);
+            marker_bd81634d2ec721722fda8482a176eb8b.setIcon(icon_664884dfc5b94f8c966dc5ca88aa7376);
         
     
-        var popup_87f0d30daed124cc08450ecbbda21449 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_b29e6028b4c7a3ff99ffaf9c683c531c = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_a1ea586edb646e1c1a7e87aa9bece90e = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT4xODU0IFRyZWF0eSBBdXRob3JpdHk8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gTW9yZ2FuIFN3aW5nZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMywgMjAyMy0yMDI0LCAyMDI0LTIwMjU8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiB1bmtub3duPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_87f0d30daed124cc08450ecbbda21449.setContent(i_frame_a1ea586edb646e1c1a7e87aa9bece90e);
+                var i_frame_6030e188931b741d5bb3310218c72f52 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT4xODU0IFRyZWF0eSBBdXRob3JpdHk8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gTW9yZ2FuIFN3aW5nZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMywgMjAyMy0yMDI0LCAyMDI0LTIwMjU8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiB1bmtub3duPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_b29e6028b4c7a3ff99ffaf9c683c531c.setContent(i_frame_6030e188931b741d5bb3310218c72f52);
             
         
 
-        marker_22b967a40a97cec76f53f1f57fadbe84.bindPopup(popup_87f0d30daed124cc08450ecbbda21449)
+        marker_bd81634d2ec721722fda8482a176eb8b.bindPopup(popup_b29e6028b4c7a3ff99ffaf9c683c531c)
         ;
 
         
     
     
-            marker_22b967a40a97cec76f53f1f57fadbe84.bindTooltip(
+            marker_bd81634d2ec721722fda8482a176eb8b.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -15090,34 +15238,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_36f412021a3ec6b35c82116d38672c8a = L.marker(
+            var marker_1351311690e0844fa58528ec4bed19a9 = L.marker(
                 [47.0, -92.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_476168d073f13c95ef401f7f9708d68e = L.AwesomeMarkers.icon(
+            var icon_ec156b8131301f94ccf9f0037cc0a9b9 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_36f412021a3ec6b35c82116d38672c8a.setIcon(icon_476168d073f13c95ef401f7f9708d68e);
+            marker_1351311690e0844fa58528ec4bed19a9.setIcon(icon_ec156b8131301f94ccf9f0037cc0a9b9);
         
     
-        var popup_2778dba5e00d20e8e0d2b96030db6e58 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_f444555a29f0053e1db40ab50f6f5a45 = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_6cc664e7c24613c884a8d2c94295f64a = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT4xODU0IFRyZWF0eSBBdXRob3JpdHk8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gTW9yZ2FuIFN3aW5nZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMywgMjAyMy0yMDI0LCAyMDI0LTIwMjU8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiB1bmtub3duPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_2778dba5e00d20e8e0d2b96030db6e58.setContent(i_frame_6cc664e7c24613c884a8d2c94295f64a);
+                var i_frame_a2e5652762020c94d13fb89465f9ba11 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT4xODU0IFRyZWF0eSBBdXRob3JpdHk8L2gxPjxicj4KICAgIDxwPjxzdHJvbmc+Q29udGFjdDo8L3N0cm9uZz4gTW9yZ2FuIFN3aW5nZW48L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMjItMjAyMywgMjAyMy0yMDI0LCAyMDI0LTIwMjU8L3A+CiAgICA8cD48c3Ryb25nPlNpdGVzOjwvc3Ryb25nPiB1bmtub3duPC9wPgogICAgPHA+PHN0cm9uZz5EYXRhIGF2YWlsYWJpbGl0eTo8L3N0cm9uZz4gdXBvbiByZXF1ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_f444555a29f0053e1db40ab50f6f5a45.setContent(i_frame_a2e5652762020c94d13fb89465f9ba11);
             
         
 
-        marker_36f412021a3ec6b35c82116d38672c8a.bindPopup(popup_2778dba5e00d20e8e0d2b96030db6e58)
+        marker_1351311690e0844fa58528ec4bed19a9.bindPopup(popup_f444555a29f0053e1db40ab50f6f5a45)
         ;
 
         
     
     
-            marker_36f412021a3ec6b35c82116d38672c8a.bindTooltip(
+            marker_1351311690e0844fa58528ec4bed19a9.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -15125,34 +15273,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
             );
         
     
-            var marker_cc707d660a8ac1930be620279e72dfb7 = L.marker(
+            var marker_383076aa07e6c11045af6136a2effe0c = L.marker(
                 [-62.0, 60.0],
                 {}
-            ).addTo(map_b97fa013674a1892142d08ad6249a2c7);
+            ).addTo(map_7812ae98bbff29b0137f73e2051b80a9);
         
     
-            var icon_41530f666bbb9cb6739b77459d125fca = L.AwesomeMarkers.icon(
+            var icon_6f71439c9be71a153435d5fc1c64036b = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;camera&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_cc707d660a8ac1930be620279e72dfb7.setIcon(icon_41530f666bbb9cb6739b77459d125fca);
+            marker_383076aa07e6c11045af6136a2effe0c.setIcon(icon_6f71439c9be71a153435d5fc1c64036b);
         
     
-        var popup_bc7c1d2fcd3dbd6eb9415021ca283086 = L.popup({&quot;maxWidth&quot;: 500});
+        var popup_1571e65a83ab9504e96a6977f00887aa = L.popup({&quot;maxWidth&quot;: 500});
 
         
             
-                var i_frame_72458884848efbb175e9be1855a81950 = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaWRhZCBkZSBBbGNhbMOhPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IE1pZ3VlbCDDgW5nZWwgZGUgUGFibG88L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMTctMjAyMjwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiBodHRwczovL3plbm9kby5vcmcvY29tbXVuaXRpZXMvcGVybWF0aGVybWFsL3JlY29yZHM/cT0mbD1saXN0JnA9MSZzPTEwJnNvcnQ9bmV3ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
-                popup_bc7c1d2fcd3dbd6eb9415021ca283086.setContent(i_frame_72458884848efbb175e9be1855a81950);
+                var i_frame_fa000c48724baea519535f934e9e750b = $(`&lt;iframe src=&quot;data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxoMT5Vbml2ZXJzaWRhZCBkZSBBbGNhbMOhPC9oMT48YnI+CiAgICA8cD48c3Ryb25nPkNvbnRhY3Q6PC9zdHJvbmc+IE1pZ3VlbCDDgW5nZWwgZGUgUGFibG88L3A+CiAgICA8cD48c3Ryb25nPlllYXI6PC9zdHJvbmc+IDIwMTctMjAyMjwvcD4KICAgIDxwPjxzdHJvbmc+U2l0ZXM6PC9zdHJvbmc+IDI8L3A+CiAgICA8cD48c3Ryb25nPkRhdGEgYXZhaWxhYmlsaXR5Ojwvc3Ryb25nPiBodHRwczovL3plbm9kby5vcmcvY29tbXVuaXRpZXMvcGVybWF0aGVybWFsL3JlY29yZHM/cT0mbD1saXN0JnA9MSZzPTEwJnNvcnQ9bmV3ZXN0PC9wPgogICAg&quot; width=&quot;500&quot; style=&quot;border:none !important;&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;`)[0];
+                popup_1571e65a83ab9504e96a6977f00887aa.setContent(i_frame_fa000c48724baea519535f934e9e750b);
             
         
 
-        marker_cc707d660a8ac1930be620279e72dfb7.bindPopup(popup_bc7c1d2fcd3dbd6eb9415021ca283086)
+        marker_383076aa07e6c11045af6136a2effe0c.bindPopup(popup_1571e65a83ab9504e96a6977f00887aa)
         ;
 
         
     
     
-            marker_cc707d660a8ac1930be620279e72dfb7.bindTooltip(
+            marker_383076aa07e6c11045af6136a2effe0c.bindTooltip(
                 `&lt;div&gt;
                      Click me!
                  &lt;/div&gt;`,
@@ -15174,14 +15322,46 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## when clicked on </span>
+<span class="c1"># number of poles </span>
+<span class="c1"># data source owner</span>
+<span class="c1"># contact information </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 </body>
