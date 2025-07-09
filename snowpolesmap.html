@@ -14594,176 +14594,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Time-Lapse-Camera-Maps">Time-Lapse Camera Maps<a class="anchor-link" href="#Time-Lapse-Camera-Maps">&#182;</a></h1><p>Currently there are 13 different networks with over 500,000 timelapse camera images. Please reach out if you'd like to include your camera network on this map.</p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span> <span class="c1"># package to read the json </span>
-<span class="kn">import</span> <span class="nn">folium</span> <span class="c1"># package for interactive map</span>
-<span class="kn">import</span> <span class="nn">branca</span> <span class="c1"># package for html formatting in folium </span>
-<span class="kn">from</span> <span class="nn">branca.element</span> <span class="kn">import</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">MacroElement</span><span class="p">,</span> <span class="n">Template</span> <span class="c1"># package for additional html viz</span>
-</pre></div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-     </div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="s1">&#39;/Users/catherinebreen/code/catherine-m-breen.github.io/snowpoles_dict.json&#39;</span>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">snowpole_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">96</span><span class="p">),</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-
-<span class="n">welcome_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">&lt;div style=&quot;</span>
-<span class="s2">    position: fixed;</span>
-<span class="s2">    bottom: 50px;</span>
-<span class="s2">    left: 50px;</span>
-<span class="s2">    width: 300px;</span>
-<span class="s2">    z-index: 9999;</span>
-<span class="s2">    background-color: white;</span>
-<span class="s2">    padding: 10px;</span>
-<span class="s2">    border: 2px solid grey;</span>
-<span class="s2">    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);</span>
-<span class="s2">&quot;&gt;</span>
-<span class="s2">    &lt;h4&gt;Welcome to the Snowpole Network Map&lt;/h4&gt;</span>
-<span class="s2">    &lt;p&gt;This map shows various snowpole observation sites from NASA and university partners.&lt;/p&gt;</span>
-<span class="s2">    &lt;p&gt;Click on any marker to learn more about the site.&lt;/p&gt;</span>
-<span class="s2">&lt;/div&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span>
-<span class="n">m</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">welcome_html</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">snowpole_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    &lt;h1&gt;</span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/h1&gt;&lt;br&gt;</span>
-<span class="s2">    &lt;p&gt;&lt;strong&gt;Contact:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">    &lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">    &lt;p&gt;&lt;strong&gt;Sites:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sites&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">    &lt;p&gt;&lt;strong&gt;Data availability:&lt;/strong&gt; </span><span class="si">{</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data availability&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">    </span><span class="si">{</span>
-    <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;ex_img_path&#39;</span><span class="p">]</span> <span class="o">+</span> 
-    <span class="s2">&quot;&#39; style=&#39;position: absolute; bottom: 10px; right: 10px; width: 100px; height: auto; border: 1px solid #ccc;&#39;&gt;&quot;</span>
-    <span class="k">if</span> <span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ex_img_path&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">]</span>
-    <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-<span class="si">}</span><span class="s2"></span>
-<span class="s2">    &quot;&quot;&quot;</span>
-
-    <span class="n">iframe</span> <span class="o">=</span> <span class="n">branca</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="n">html</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-    <span class="n">popup</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">iframe</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-    <span class="c1"># folium.Marker(</span>
-    <span class="c1">#     location=snowpole_data[key][&#39;location&#39;],</span>
-    <span class="c1">#     tooltip=&quot;Click me!&quot;,</span>
-    <span class="c1">#    # popup=f&quot;owner: {snowpole_data[key][&#39;owner&#39;]}&quot;,</span>
-    <span class="c1">#     popup = popup,</span>
-    <span class="c1">#     icon=folium.Icon(icon=&quot;camera&quot;), </span>
-    <span class="c1"># ).add_to(m)</span>
-
-    <span class="n">marker</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
-        <span class="n">location</span><span class="o">=</span><span class="n">snowpole_data</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">],</span>
-        <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Click me!&quot;</span><span class="p">,</span>
-        <span class="n">popup</span><span class="o">=</span><span class="n">popup</span><span class="p">,</span>
-        <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s2">&quot;camera&quot;</span><span class="p">),</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Add JS that zooms and pans to marker</span>
-    <span class="n">zoom_js</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    function(e)</span><span class="se">{{</span><span class="s2"></span>
-<span class="s2">        var latlng = e.target.getLatLng();</span>
-<span class="s2">        e.target._map.setView(latlng, 10);  // 5 = zoom level</span>
-<span class="s2">    </span><span class="se">}}</span><span class="s2"></span>
-<span class="s2">    &quot;&quot;&quot;</span>
-    <span class="n">marker</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;&lt;script&gt;var m = this; m.on(&#39;click&#39;, </span><span class="si">{</span><span class="n">zoom_js</span><span class="si">}</span><span class="s2">);&lt;/script&gt;&quot;</span>
-    <span class="p">))</span>
-
-    <span class="n">marker</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## could add NEON sites; there are probs sites in CA too? </span>
-<span class="c1">## Bongio study: https://zenodo.org/records/3724877 </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
@@ -15322,46 +15174,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## when clicked on </span>
-<span class="c1"># number of poles </span>
-<span class="c1"># data source owner</span>
-<span class="c1"># contact information </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
 </div>
 </body>
