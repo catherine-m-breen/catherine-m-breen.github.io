@@ -8,7 +8,7 @@
     "images": 100000,
     "data availability": "https://nsidc.org/data/snex17_tli/versions/1",
     "labeled":"no",
-    "ex_img_path":"https://github.com/catherine-m-breen/catherine-m-breen.github.io/blob/main/snowpole_imgs/snex2017_WSCT2144.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "2": {
     "owner": "NASA SnowEX",
@@ -30,7 +30,7 @@
     "images": 100000,
     "data availability": "upon request",
     "labeled":"no",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "4": {
     "owner": "University of Washington",
@@ -41,7 +41,7 @@
     "images": 100000,
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "5": {
     "owner": "University of Washington Olympex",
@@ -52,7 +52,7 @@
     "images": 100000,
     "data availability": "https://olympex.atmos.washington.edu/index.html?x=OLYMPEX_Obs",
     "labeled":"unknown",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "6": {
     "owner": "University of Washington",
@@ -63,7 +63,7 @@
     "images": 100000,
     "data availability": "http://hdl.handle.net/1773/49480",
     "labeled":"yes",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "7": {
     "owner": "The Nature Conservancy",
@@ -74,7 +74,7 @@
     "images": "NA",
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "8": {
     "owner": "University of Idaho",
@@ -85,7 +85,7 @@
     "images": 240000,
     "data availability": "upon request",
     "labeled": "yes",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "9": {
     "owner": "University of New Hampshire",
@@ -96,7 +96,7 @@
     "images": "unknown",
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "10": {
     "owner": "NASA ABoVE",
@@ -107,7 +107,7 @@
     "images": "unknown",
     "data availability": "https://doi.org/10.3334/ORNLDAAC/1656",
     "labeled": "yes",
-    "ex_img_path": "https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/Cosgrove_jaegermesa_nabesna_C01_20160927T190000.jpg"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/Cosgrove_jaegermesa_nabesna_C01_20160927T190000.jpg"
   },
     "11": {
     "owner": "1854 Treaty Authority",
@@ -118,7 +118,7 @@
     "images": "unknown",
     "data availability": "upon request",
     "labeled":"partial",
-     "ex_img_path":""
+     "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
    "12": {
     "owner": "1854 Treaty Authority",
@@ -129,7 +129,7 @@
     "images": "unknown",
     "data availability": "upon request",
     "labeled":"partial",
-    "ex_img_path":""
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
     "13": {
     "owner": "Universidad de Alcalá",
@@ -140,6 +140,7 @@
     "images": "unknown",
     "data availability": "https://zenodo.org/communities/permathermal/records?q=&l=list&p=1&s=10&sort=newest",
     "labeled":"yes",
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG",
     "notes": "https://www.sciencedirect.com/science/article/pii/S2352340923010016"
   }
 }
