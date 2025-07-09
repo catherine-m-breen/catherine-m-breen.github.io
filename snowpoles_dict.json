@@ -19,7 +19,7 @@
     "images": 100000,
     "data availability": "https://nsidc.org/data/snex20_tli/versions/1",
     "labeled":"yes",
-    "ex_img_path":"https://github.com/catherine-m-breen/catherine-m-breen.github.io/blob/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
   "3": {
     "owner": "NASA SnowEX",
