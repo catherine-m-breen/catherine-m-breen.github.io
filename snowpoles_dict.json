@@ -8,7 +8,7 @@
     "images": 100000,
     "data availability": "https://nsidc.org/data/snex17_tli/versions/1",
     "labeled":"no",
-    "ex_img_path":"snowpole_imgs/snex2017_WSCT2144.JPG"
+    "ex_img_path":"https://github.com/catherine-m-breen/catherine-m-breen.github.io/blob/main/snowpole_imgs/snex2017_WSCT2144.JPG"
   },
   "2": {
     "owner": "NASA SnowEX",
@@ -107,7 +107,7 @@
     "images": "unknown",
     "data availability": "https://doi.org/10.3334/ORNLDAAC/1656",
     "labeled": "yes",
-    "ex_img_path": "snowpole_imgs/Cosgrove_jaegermesa_nabesna_C01_20160927T190000.jpg"
+    "ex_img_path": "https://github.com/catherine-m-breen/catherine-m-breen.github.io/blob/main/snowpole_imgs/Cosgrove_jaegermesa_nabesna_C01_20160927T190000.jpg"
   },
     "11": {
     "owner": "1854 Treaty Authority",
