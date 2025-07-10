@@ -8,7 +8,7 @@
     "images": 100000,
     "data availability": "https://nsidc.org/data/snex17_tli/versions/1",
     "labeled":"no",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/WSCT2155.JPG"
   },
   "2": {
     "owner": "NASA SnowEX",
@@ -85,7 +85,7 @@
     "images": 240000,
     "data availability": "upon request",
     "labeled": "yes",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/01793.JPG"
   },
   "9": {
     "owner": "University of New Hampshire",
@@ -143,6 +143,17 @@
     "labeled":"yes",
     "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/2015_02_22_13_01_00.jpg",
     "notes": ""
+  },
+    "14": {
+    "owner": "Fond du Lac Tribal and Community College",
+    "contact": "Courtney Kowalczak",
+    "location": [46, -92],
+    "year(s)": "2022-2023",
+    "sites": "1",
+    "images": "unknown",
+    "data availability": "upon request",
+    "labeled":"yes",
+     "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/WSCT0878.JPG"
   }
 }
 
