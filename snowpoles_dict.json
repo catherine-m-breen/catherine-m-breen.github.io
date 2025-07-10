@@ -26,7 +26,7 @@
     "contact":"Carrie Vuyovich",
     "location": [64, -147],
     "year(s)": "2022-2023",
-    "sites": 10,
+    "sites": 30,
     "images": 100000,
     "data availability": "upon request",
     "labeled":"no",
@@ -41,7 +41,7 @@
     "images": 100000,
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/IMG_0597.JPG"
   },
   "5": {
     "owner": "University of Washington Olympex",
@@ -74,7 +74,7 @@
     "images": "NA",
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/TIME3_BC_G_2011 (38).JPG"
   },
   "8": {
     "owner": "University of Idaho",
@@ -96,14 +96,14 @@
     "images": "unknown",
     "data availability": "upon request",
     "labeled":"yes",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/WSCT1458.jpeg"
   },
   "10": {
     "owner": "NASA ABoVE",
     "contact": "Chris Cosgrove",
     "location": [60, -142],
     "year(s)": "2016-2017",
-    "sites": 2,
+    "sites": 22,
     "images": "unknown",
     "data availability": "https://doi.org/10.3334/ORNLDAAC/1656",
     "labeled": "yes",
@@ -120,18 +120,7 @@
     "labeled":"partial",
      "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
   },
-   "12": {
-    "owner": "1854 Treaty Authority",
-    "contact": "Morgan Swingen",
-    "location": [47, -92],
-    "year(s)": "2022-2023, 2023-2024, 2024-2025",
-    "sites": "unknown",
-    "images": "unknown",
-    "data availability": "upon request",
-    "labeled":"partial",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
-  },
-    "13": {
+    "12": {
     "owner": "Universidad de Alcalá",
     "contact": "Miguel Ángel de Pablo",
     "location": [-62, 60],
@@ -142,6 +131,18 @@
     "labeled":"yes",
     "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG",
     "notes": "https://www.sciencedirect.com/science/article/pii/S2352340923010016"
+  },
+    "13": {
+    "owner": "University of Washington Mountain Hydrology Group",
+    "contact": "Nic Wayand",
+    "location": [-47, 121],
+    "year(s)": "2013-2014, 2014-2015",
+    "sites": "2",
+    "images": "unknown",
+    "data availability": "https://zenodo.org/communities/permathermal/records?q=&l=list&p=1&s=10&sort=newest",
+    "labeled":"yes",
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/2015_02_22_13_01_00.jpg",
+    "notes": ""
   }
 }
 
