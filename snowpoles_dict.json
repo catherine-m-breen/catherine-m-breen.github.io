@@ -56,14 +56,14 @@
   },
   "6": {
     "owner": "University of Washington",
-    "contact": "Katie Breen",
+    "contact": "Catherines Breen",
     "location": [48, -117],
     "year(s)": "2021-2022",
     "sites": 9,
     "images": 100000,
-    "data availability": "http://hdl.handle.net/1773/49480",
+    "data availability": "UW ResearchWorks archive, http://hdl.handle.net/1773/49480",
     "labeled":"yes",
-    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/snex2020_W2A_WSCT0237.JPG"
+    "ex_img_path":"https://raw.githubusercontent.com/catherine-m-breen/catherine-m-breen.github.io/main/snowpole_imgs/CHE9_IMG_1489.JPG"
   },
   "7": {
     "owner": "The Nature Conservancy",
@@ -135,7 +135,7 @@
     "13": {
     "owner": "University of Washington Mountain Hydrology Group",
     "contact": "Nic Wayand",
-    "location": [-47, 121],
+    "location": [47, -121.5],
     "year(s)": "2013-2014, 2014-2015",
     "sites": "2",
     "images": "unknown",
